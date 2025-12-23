@@ -38,7 +38,7 @@ app.use((req, res, next) => {
 // Health check
 app.get('/api', (req, res) => {
   res.json({ 
-    message: 'MMA Agriculture API is running!',
+    message: 'MMS agricole API is running!',
     version: '1.0.0',
     timestamp: new Date().toISOString()
   });

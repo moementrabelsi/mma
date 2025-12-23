@@ -11,7 +11,7 @@ const About = () => {
         <div className="about-hero-overlay"></div>
         <div className="container">
           <div className="about-hero-content">
-            <h1 className="page-title">À propos de MMA Agriculture</h1>
+            <h1 className="page-title">À propos de MMS agricole</h1>
             <p className="page-subtitle">
               Cultiver l'excellence en agriculture moderne depuis 1995
             </p>
@@ -29,7 +29,7 @@ const About = () => {
             <div className="mission-content">
               <h2 className="section-title">Notre mission</h2>
               <p>
-                Chez MMA Agriculture, nous nous consacrons à fournir aux agriculteurs et aux professionnels 
+                Chez MMS agricole, nous nous consacrons à fournir aux agriculteurs et aux professionnels 
                 agricoles des produits de la plus haute qualité et des solutions innovantes pour des pratiques 
                 agricoles durables.
               </p>
@@ -105,7 +105,7 @@ const About = () => {
             <div className="story-content">
               <h2 className="section-title">Notre histoire</h2>
               <p>
-                Fondée en 1995, MMA Agriculture a commencé avec une vision simple : fournir 
+                Fondée en 1995, MMS agricole a commencé avec une vision simple : fournir 
                 aux agriculteurs un accès à des produits agricoles de qualité supérieure qui donnent de vrais résultats.
               </p>
               <p>
@@ -155,7 +155,7 @@ const About = () => {
         <div className="container">
           <div className="cta-content">
             <h2>Prêt à devenir notre partenaire ?</h2>
-            <p>Découvrez comment MMA peut aider votre ferme à prospérer</p>
+            <p>Découvrez comment MMS peut aider votre ferme à prospérer</p>
             <div className="cta-buttons">
               <Link to="/catalog" className="btn btn-primary btn-large">
                 Parcourir les produits

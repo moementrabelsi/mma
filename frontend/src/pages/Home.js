@@ -35,7 +35,7 @@ const Home = () => {
         <div className="carousel-overlay-content">
           <div className="container">
             <div className="hero-content">
-              <h1 className="hero-title">Bienvenue chez MMA Agriculture</h1>
+              <h1 className="hero-title">Bienvenue chez MMS agricole</h1>
               <p className="hero-subtitle">
                 Votre partenaire de confiance pour des solutions agricoles modernes et durables
               </p>
@@ -55,7 +55,7 @@ const Home = () => {
       {/* Features Section */}
       <section className="features section">
         <div className="container">
-          <h2 className="section-title">Pourquoi choisir MMA ?</h2>
+          <h2 className="section-title">Pourquoi choisir MMS ?</h2>
           <p className="section-description">
             Nous fournissons des produits et solutions agricoles de qualité supérieure pour les agriculteurs modernes
           </p>

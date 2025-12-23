@@ -84,7 +84,7 @@ const AdminLogin = () => {
         <div className="login-card">
           <div className="login-header">
             <h1>Connexion Admin</h1>
-            <p>Tableau de bord MMA Agriculture</p>
+            <p>Tableau de bord MMS agricole</p>
           </div>
 
           {error && (

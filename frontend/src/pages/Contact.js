@@ -200,7 +200,7 @@ const Contact = () => {
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Localisation MMA Agriculture"
+            title="Localisation MMS agricole"
             className="map-iframe"
           ></iframe>
           <div className="map-overlay-info">
