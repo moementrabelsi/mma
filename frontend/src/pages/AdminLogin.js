@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { FaLock, FaUser } from 'react-icons/fa';
 import './AdminLogin.css';
 
+const USE_STATIC_DATA = !process.env.REACT_APP_API_URL || process.env.REACT_APP_USE_STATIC === 'true';
+
 const AdminLogin = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -10,13 +12,36 @@ const AdminLogin = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  // If using static data, show message that admin panel requires backend
+  if (USE_STATIC_DATA) {
+    return (
+      <div className="admin-login-page">
+        <div className="login-container">
+          <div className="login-card">
+            <div className="login-header">
+              <h1>Panel Admin</h1>
+              <p>Non disponible en mode statique</p>
+            </div>
+            <div style={{ padding: '20px', textAlign: 'center' }}>
+              <p>Le panel d'administration nécessite un backend pour fonctionner.</p>
+              <p style={{ marginTop: '10px', fontSize: '0.9rem', color: '#666' }}>
+                Pour activer le panel admin, configurez REACT_APP_API_URL avec l'URL de votre backend.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/auth/login', {
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      const response = await fetch(`${apiUrl}/api/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

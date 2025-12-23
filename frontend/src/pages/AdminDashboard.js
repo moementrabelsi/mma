@@ -6,6 +6,8 @@ import {
 } from 'react-icons/fa';
 import './AdminDashboard.css';
 
+const USE_STATIC_DATA = !process.env.REACT_APP_API_URL || process.env.REACT_APP_USE_STATIC === 'true';
+
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState('products');
   const [loading, setLoading] = useState(false);
@@ -16,6 +18,10 @@ const AdminDashboard = () => {
   const adminUser = JSON.parse(localStorage.getItem('adminUser') || '{}');
 
   useEffect(() => {
+    if (USE_STATIC_DATA) {
+      navigate('/admin/login');
+      return;
+    }
     if (!token) {
       navigate('/admin/login');
     }
@@ -28,8 +34,14 @@ const AdminDashboard = () => {
   };
 
   const apiCall = async (url, options = {}) => {
+    if (USE_STATIC_DATA) {
+      throw new Error('Le panel admin nécessite un backend. Configurez REACT_APP_API_URL.');
+    }
     try {
-      const response = await fetch(url, {
+      const baseUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      const fullUrl = url.startsWith('http') ? url : `${baseUrl}${url.startsWith('/') ? '' : '/'}${url}`;
+      
+      const response = await fetch(fullUrl, {
         ...options,
         headers: {
           'Content-Type': 'application/json',
@@ -185,12 +197,12 @@ const ProductsManager = ({ apiCall, setError, setLoading, loading }) => {
       };
 
       if (editingProduct) {
-        await apiCall(`http://localhost:5000/api/admin/products/${editingProduct.id}`, {
+        await apiCall(`/api/admin/products/${editingProduct.id}`, {
           method: 'PUT',
           body: JSON.stringify(productData),
         });
       } else {
-        await apiCall('http://localhost:5000/api/admin/products', {
+        await apiCall('/api/admin/products', {
           method: 'POST',
           body: JSON.stringify(productData),
         });
@@ -239,7 +251,7 @@ const ProductsManager = ({ apiCall, setError, setLoading, loading }) => {
 
     try {
       setLoading(true);
-      await apiCall(`http://localhost:5000/api/admin/products/${id}`, {
+      await apiCall(`/api/admin/products/${id}`, {
         method: 'DELETE',
       });
       await loadProducts();
@@ -480,12 +492,12 @@ const CategoriesManager = ({ apiCall, setError, setLoading, loading }) => {
     try {
       setLoading(true);
       if (editingCategory) {
-        await apiCall(`http://localhost:5000/api/admin/categories/${editingCategory.id}`, {
+        await apiCall(`/api/admin/categories/${editingCategory.id}`, {
           method: 'PUT',
           body: JSON.stringify(formData),
         });
       } else {
-        await apiCall('http://localhost:5000/api/admin/categories', {
+        await apiCall('/api/admin/categories', {
           method: 'POST',
           body: JSON.stringify(formData),
         });
@@ -515,7 +527,7 @@ const CategoriesManager = ({ apiCall, setError, setLoading, loading }) => {
     if (!window.confirm('Êtes-vous sûr de vouloir supprimer cette catégorie ?')) return;
     try {
       setLoading(true);
-      await apiCall(`http://localhost:5000/api/admin/categories/${id}`, {
+      await apiCall(`/api/admin/categories/${id}`, {
         method: 'DELETE',
       });
       await loadCategories();
@@ -668,12 +680,12 @@ const SubCategoriesManager = ({ apiCall, setError, setLoading, loading }) => {
     try {
       setLoading(true);
       if (editingSubcategory) {
-        await apiCall(`http://localhost:5000/api/admin/subcategories/${editingSubcategory.id}`, {
+        await apiCall(`/api/admin/subcategories/${editingSubcategory.id}`, {
           method: 'PUT',
           body: JSON.stringify(formData),
         });
       } else {
-        await apiCall('http://localhost:5000/api/admin/subcategories', {
+        await apiCall('/api/admin/subcategories', {
           method: 'POST',
           body: JSON.stringify(formData),
         });
@@ -703,7 +715,7 @@ const SubCategoriesManager = ({ apiCall, setError, setLoading, loading }) => {
     if (!window.confirm('Êtes-vous sûr de vouloir supprimer cette sous-catégorie ?')) return;
     try {
       setLoading(true);
-      await apiCall(`http://localhost:5000/api/admin/subcategories/${id}`, {
+      await apiCall(`/api/admin/subcategories/${id}`, {
         method: 'DELETE',
       });
       await loadSubcategories();
