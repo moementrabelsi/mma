@@ -27,8 +27,6 @@ const Catalog = () => {
   const [selectedSubCategory, setSelectedSubCategory] = useState(searchParams.get('subCategory') || '');
   const [selectedType, setSelectedType] = useState(searchParams.get('type') || '');
   const [selectedUsage, setSelectedUsage] = useState(searchParams.get('usage') || '');
-  const [minPrice, setMinPrice] = useState(searchParams.get('minPrice') || '');
-  const [maxPrice, setMaxPrice] = useState(searchParams.get('maxPrice') || '');
   const [sortBy, setSortBy] = useState(searchParams.get('sortBy') || 'name');
   const [currentPage, setCurrentPage] = useState(parseInt(searchParams.get('page')) || 1);
 
@@ -78,7 +76,7 @@ const Catalog = () => {
   // Reset to page 1 when filters change
   useEffect(() => {
     setCurrentPage(1);
-  }, [searchQuery, selectedCategory, selectedSubCategory, selectedType, selectedUsage, minPrice, maxPrice, sortBy]);
+  }, [searchQuery, selectedCategory, selectedSubCategory, selectedType, selectedUsage, sortBy]);
 
   // Fetch products with filters and pagination
   useEffect(() => {
@@ -96,8 +94,6 @@ const Catalog = () => {
         if (selectedSubCategory) filters.subCategory = selectedSubCategory;
         if (selectedType) filters.type = selectedType;
         if (selectedUsage) filters.usage = selectedUsage;
-        if (minPrice) filters.minPrice = minPrice;
-        if (maxPrice) filters.maxPrice = maxPrice;
         if (sortBy) filters.sortBy = sortBy;
 
         const data = await getProducts(filters);
@@ -151,7 +147,7 @@ const Catalog = () => {
     };
 
     fetchProducts();
-  }, [searchQuery, selectedCategory, selectedSubCategory, selectedType, selectedUsage, minPrice, maxPrice, sortBy, currentPage]);
+  }, [searchQuery, selectedCategory, selectedSubCategory, selectedType, selectedUsage, sortBy, currentPage]);
 
   // Update URL params
   useEffect(() => {
@@ -161,12 +157,10 @@ const Catalog = () => {
     if (selectedSubCategory) params.subCategory = selectedSubCategory;
     if (selectedType) params.type = selectedType;
     if (selectedUsage) params.usage = selectedUsage;
-    if (minPrice) params.minPrice = minPrice;
-    if (maxPrice) params.maxPrice = maxPrice;
     if (sortBy && sortBy !== 'name') params.sortBy = sortBy;
     if (currentPage > 1) params.page = currentPage;
     setSearchParams(params);
-  }, [searchQuery, selectedCategory, selectedSubCategory, selectedType, selectedUsage, minPrice, maxPrice, sortBy, currentPage, setSearchParams]);
+  }, [searchQuery, selectedCategory, selectedSubCategory, selectedType, selectedUsage, sortBy, currentPage, setSearchParams]);
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
@@ -183,8 +177,6 @@ const Catalog = () => {
     setSelectedSubCategory('');
     setSelectedType('');
     setSelectedUsage('');
-    setMinPrice('');
-    setMaxPrice('');
     setSortBy('name');
     setCurrentPage(1);
   };
@@ -194,7 +186,7 @@ const Catalog = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const hasActiveFilters = searchQuery || selectedCategory || selectedSubCategory || selectedType || selectedUsage || minPrice || maxPrice || (sortBy && sortBy !== 'name');
+  const hasActiveFilters = searchQuery || selectedCategory || selectedSubCategory || selectedType || selectedUsage || (sortBy && sortBy !== 'name');
 
   return (
     <div className="catalog-page">
@@ -307,48 +299,6 @@ const Catalog = () => {
             </select>
           </div>
 
-          {/* Price Filter */}
-          <div className="filter-group">
-            <label htmlFor="price">Prix (€)</label>
-            <div className="price-filter">
-              <input
-                id="minPrice"
-                type="number"
-                placeholder="Min"
-                value={minPrice}
-                onChange={(e) => setMinPrice(e.target.value)}
-                className="price-input"
-                min="0"
-                step="0.01"
-              />
-              <span className="price-separator">-</span>
-              <input
-                id="maxPrice"
-                type="number"
-                placeholder="Max"
-                value={maxPrice}
-                onChange={(e) => setMaxPrice(e.target.value)}
-                className="price-input"
-                min="0"
-                step="0.01"
-              />
-            </div>
-          </div>
-
-          {/* Sort Filter */}
-          <div className="filter-group">
-            <label htmlFor="sortBy">Trier par</label>
-            <select
-              id="sortBy"
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value)}
-              className="filter-select"
-            >
-              <option value="name">Nom (A-Z)</option>
-              <option value="price-asc">Prix croissant</option>
-              <option value="price-desc">Prix décroissant</option>
-            </select>
-          </div>
         </aside>
 
         {/* Products Grid */}
@@ -363,6 +313,20 @@ const Catalog = () => {
                 </>
               )}
             </p>
+            {/* Sort Filter */}
+            <div className="sort-filter">
+              <label htmlFor="sortBy">Trier par :</label>
+              <select
+                id="sortBy"
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="sort-select"
+              >
+                <option value="name">Nom (A-Z)</option>
+                <option value="price_asc">Prix croissant</option>
+                <option value="price_desc">Prix décroissant</option>
+              </select>
+            </div>
           </div>
 
           {/* Loading State */}

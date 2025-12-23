@@ -287,14 +287,6 @@ export const filterProducts = (products, filters = {}) => {
     filtered = filtered.filter(p => p.attributes?.usage === filters.usage);
   }
 
-  // Filter by price range
-  if (filters.minPrice !== undefined && filters.minPrice !== null && filters.minPrice !== '') {
-    filtered = filtered.filter(p => p.price >= parseFloat(filters.minPrice));
-  }
-  if (filters.maxPrice !== undefined && filters.maxPrice !== null && filters.maxPrice !== '') {
-    filtered = filtered.filter(p => p.price <= parseFloat(filters.maxPrice));
-  }
-
   // Search by name or description
   if (filters.search) {
     const searchTerm = filters.search.toLowerCase();
@@ -308,9 +300,9 @@ export const filterProducts = (products, filters = {}) => {
   if (filters.sortBy) {
     if (filters.sortBy === 'name') {
       filtered.sort((a, b) => a.name.localeCompare(b.name));
-    } else if (filters.sortBy === 'price_asc') {
+    } else if (filters.sortBy === 'price_asc' || filters.sortBy === 'price-asc') {
       filtered.sort((a, b) => a.price - b.price);
-    } else if (filters.sortBy === 'price_desc') {
+    } else if (filters.sortBy === 'price_desc' || filters.sortBy === 'price-desc') {
       filtered.sort((a, b) => b.price - a.price);
     }
   }

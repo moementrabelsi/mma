@@ -94,37 +94,6 @@
   color: var(--gray-400);
 }
 
-/* Price Filter */
-.price-filter {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.price-input {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid var(--gray-300);
-  border-radius: var(--radius-sm);
-  font-size: 0.875rem;
-  transition: border-color var(--transition);
-  background-color: var(--white);
-}
-
-.price-input:focus {
-  outline: none;
-  border-color: var(--primary-green);
-}
-
-.price-input::placeholder {
-  color: var(--gray-400);
-}
-
-.price-separator {
-  color: var(--gray-500);
-  font-weight: 500;
-  flex-shrink: 0;
-}
 
 /* Products Main */
 .products-main {
@@ -132,13 +101,48 @@
 }
 
 .results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .results-count {
   font-size: 1rem;
   color: var(--gray-600);
   font-weight: 500;
+}
+
+.sort-filter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sort-filter label {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--gray-700);
+  white-space: nowrap;
+}
+
+.sort-select {
+  padding: 8px 12px;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-sm);
+  font-size: 0.9375rem;
+  background-color: var(--white);
+  color: var(--gray-900);
+  cursor: pointer;
+  transition: border-color var(--transition);
+  min-width: 180px;
+}
+
+.sort-select:focus {
+  outline: none;
+  border-color: var(--primary-green);
 }
 
 /* Products Grid */
@@ -357,12 +361,18 @@
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   }
 
-  .price-filter {
-    flex-wrap: wrap;
+  .results-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .price-separator {
-    margin: 0 4px;
+  .sort-filter {
+    width: 100%;
+  }
+
+  .sort-select {
+    flex: 1;
+    min-width: unset;
   }
 }
 
@@ -377,19 +387,6 @@
 
   .filter-group {
     margin-bottom: 20px;
-  }
-
-  .price-filter {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .price-separator {
-    display: none;
-  }
-
-  .price-input {
-    width: 100%;
   }
 
   .pagination {
