@@ -1,0 +1,209 @@
+/* Subcategory Header */
+.subcategory-header {
+  background-color: var(--primary-green);
+  color: var(--white);
+  padding: 50px 0;
+  text-align: center;
+}
+
+.subcategory-header .page-title {
+  color: var(--white);
+}
+
+.subcategory-header .page-subtitle {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.category-info {
+  margin-top: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+}
+
+.category-info a {
+  color: var(--accent-orange-light);
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.category-info a:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+/* Products Section */
+.products-header {
+  margin-bottom: 32px;
+}
+
+.products-header h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+/* Products Grid - Reuse styles from Catalog */
+.subcategories-page .products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.subcategories-page .product-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.subcategories-page .product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.subcategories-page .product-image {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.subcategories-page .product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.subcategories-page .product-card:hover .product-image img {
+  transform: scale(1.1);
+}
+
+.subcategories-page .product-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.subcategories-page .product-badge.in-stock {
+  background-color: var(--primary-green);
+  color: var(--white);
+}
+
+.subcategories-page .product-badge.out-of-stock {
+  background-color: var(--gray-400);
+  color: var(--white);
+}
+
+.subcategories-page .product-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.subcategories-page .product-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.subcategories-page .product-description {
+  color: var(--gray-600);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.subcategories-page .product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.subcategories-page .product-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-orange);
+}
+
+.subcategories-page .product-link {
+  color: var(--primary-green);
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: color var(--transition-fast);
+}
+
+.subcategories-page .product-card:hover .product-link {
+  color: var(--accent-orange);
+}
+
+/* No Products State */
+.subcategories-page .no-products {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.subcategories-page .no-products-icon {
+  font-size: 4rem;
+  margin-bottom: 24px;
+  opacity: 0.5;
+  color: var(--gray-400);
+  display: flex;
+  justify-content: center;
+}
+
+.subcategories-page .no-products h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 12px;
+}
+
+.subcategories-page .no-products p {
+  font-size: 1.125rem;
+  color: var(--gray-600);
+  margin-bottom: 24px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .subcategory-header {
+    padding: 40px 0;
+  }
+
+  .subcategories-page .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .subcategory-header {
+    padding: 30px 0;
+  }
+
+  .subcategory-header .page-title {
+    font-size: 1.75rem;
+  }
+
+  .subcategories-page .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .products-header h2 {
+    font-size: 1.5rem;
+  }
+}
+
