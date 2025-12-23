@@ -156,7 +156,7 @@ const ProductsManager = ({ apiCall, setError, setLoading, loading }) => {
   const loadProducts = async () => {
     try {
       setLoading(true);
-      const data = await apiCall('http://localhost:5000/api/products?limit=100');
+      const data = await apiCall('/api/products?limit=100');
       setProducts(data.products || []);
     } catch (err) {
       setError(err.message);
@@ -167,7 +167,7 @@ const ProductsManager = ({ apiCall, setError, setLoading, loading }) => {
 
   const loadCategories = async () => {
     try {
-      const data = await apiCall('http://localhost:5000/api/categories');
+      const data = await apiCall('/api/categories');
       setCategories(data.data || data);
     } catch (err) {
       console.error('Error loading categories:', err);
@@ -176,7 +176,7 @@ const ProductsManager = ({ apiCall, setError, setLoading, loading }) => {
 
   const loadSubcategories = async () => {
     try {
-      const data = await apiCall('http://localhost:5000/api/subcategories');
+      const data = await apiCall('/api/subcategories');
       setSubcategories(data.data || data);
     } catch (err) {
       console.error('Error loading subcategories:', err);
@@ -478,7 +478,7 @@ const CategoriesManager = ({ apiCall, setError, setLoading, loading }) => {
   const loadCategories = async () => {
     try {
       setLoading(true);
-      const data = await apiCall('http://localhost:5000/api/categories');
+      const data = await apiCall('/api/categories');
       setCategories(data.data || data);
     } catch (err) {
       setError(err.message);
@@ -657,7 +657,7 @@ const SubCategoriesManager = ({ apiCall, setError, setLoading, loading }) => {
   const loadSubcategories = async () => {
     try {
       setLoading(true);
-      const data = await apiCall('http://localhost:5000/api/subcategories');
+      const data = await apiCall('/api/subcategories');
       setSubcategories(data.data || data);
     } catch (err) {
       setError(err.message);
@@ -668,7 +668,7 @@ const SubCategoriesManager = ({ apiCall, setError, setLoading, loading }) => {
 
   const loadCategories = async () => {
     try {
-      const data = await apiCall('http://localhost:5000/api/categories');
+      const data = await apiCall('/api/categories');
       setCategories(data.data || data);
     } catch (err) {
       console.error('Error loading categories:', err);
