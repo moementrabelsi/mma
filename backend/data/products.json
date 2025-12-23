@@ -1,0 +1,467 @@
+{
+  "categories": [
+    {
+      "id": "seeds",
+      "name": "Seeds & Planting",
+      "description": "High-quality seeds for various crops",
+      "image": "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800"
+    },
+    {
+      "id": "fertilizers",
+      "name": "Fertilizers & Nutrients",
+      "description": "Organic and chemical fertilizers for optimal growth",
+      "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800"
+    },
+    {
+      "id": "equipment",
+      "name": "Equipment & Tools",
+      "description": "Modern farming equipment and tools",
+      "image": "https://images.unsplash.com/photo-1625246165159-155c3454b8f2?w=800"
+    },
+    {
+      "id": "pesticides",
+      "name": "Pesticides & Protection",
+      "description": "Safe and effective crop protection solutions",
+      "image": "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=800"
+    }
+  ],
+  "subCategories": [
+    {
+      "id": "vegetable-seeds",
+      "name": "Vegetable Seeds",
+      "categoryId": "seeds",
+      "description": "Premium vegetable seeds"
+    },
+    {
+      "id": "grain-seeds",
+      "name": "Grain Seeds",
+      "categoryId": "seeds",
+      "description": "High-yield grain varieties"
+    },
+    {
+      "id": "flower-seeds",
+      "name": "Flower Seeds",
+      "categoryId": "seeds",
+      "description": "Beautiful flowering plants"
+    },
+    {
+      "id": "organic-fertilizers",
+      "name": "Organic Fertilizers",
+      "categoryId": "fertilizers",
+      "description": "100% organic nutrients"
+    },
+    {
+      "id": "chemical-fertilizers",
+      "name": "Chemical Fertilizers",
+      "categoryId": "fertilizers",
+      "description": "Fast-acting chemical solutions"
+    },
+    {
+      "id": "soil-amendments",
+      "name": "Soil Amendments",
+      "categoryId": "fertilizers",
+      "description": "Improve soil quality"
+    },
+    {
+      "id": "hand-tools",
+      "name": "Hand Tools",
+      "categoryId": "equipment",
+      "description": "Essential hand tools"
+    },
+    {
+      "id": "machinery",
+      "name": "Machinery",
+      "categoryId": "equipment",
+      "description": "Powered farming equipment"
+    },
+    {
+      "id": "irrigation",
+      "name": "Irrigation Systems",
+      "categoryId": "equipment",
+      "description": "Water management solutions"
+    },
+    {
+      "id": "insecticides",
+      "name": "Insecticides",
+      "categoryId": "pesticides",
+      "description": "Control harmful insects"
+    },
+    {
+      "id": "herbicides",
+      "name": "Herbicides",
+      "categoryId": "pesticides",
+      "description": "Weed control solutions"
+    },
+    {
+      "id": "fungicides",
+      "name": "Fungicides",
+      "categoryId": "pesticides",
+      "description": "Protect against fungal diseases"
+    }
+  ],
+  "products": [
+    {
+      "id": "p1",
+      "name": "Tomato Seeds Premium",
+      "category": "seeds",
+      "subCategory": "vegetable-seeds",
+      "description": "Premium hybrid tomato seeds with high yield. Disease resistant and perfect for greenhouse or outdoor cultivation.",
+      "price": 12.99,
+      "image": "https://images.unsplash.com/photo-1592841200221-a6898f307baa?w=800",
+      "inStock": true,
+      "attributes": {
+        "type": "Hybrid",
+        "usage": "Greenhouse/Outdoor"
+      }
+    },
+    {
+      "id": "p2",
+      "name": "Carrot Seeds Orange Wonder",
+      "category": "seeds",
+      "subCategory": "vegetable-seeds",
+      "description": "Sweet and crunchy orange carrots. Fast growing variety suitable for all soil types.",
+      "price": 8.99,
+      "image": "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=800",
+      "inStock": true,
+      "attributes": {
+        "type": "Organic",
+        "usage": "Outdoor"
+      }
+    },
+    {
+      "id": "p3",
+      "name": "Lettuce Seeds Mixed Variety",
+      "category": "seeds",
+      "subCategory": "vegetable-seeds",
+      "description": "Mixed lettuce varieties for fresh salads. Quick growing and perfect for successive planting.",
+      "price": 6.99,
+      "image": "https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?w=800",
+      "inStock": true,
+      "attributes": {
+        "type": "Organic",
+        "usage": "Indoor/Outdoor"
+      }
+    },
+    {
+      "id": "p4",
+      "name": "Wheat Seeds High Yield",
+      "category": "seeds",
+      "subCategory": "grain-seeds",
+      "description": "Premium wheat seeds with exceptional yield. Drought resistant and suitable for various climates.",
+      "price": 24.99,
+      "image": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800",
+      "inStock": true,
+      "attributes": {
+        "type": "Hybrid",
+        "usage": "Large Scale"
+      }
+    },
+    {
+      "id": "p5",
+      "name": "Corn Seeds Sweet Gold",
+      "category": "seeds",
+      "subCategory": "grain-seeds",
+      "description": "Sweet corn variety with golden kernels. Perfect for fresh consumption and processing.",
+      "price": 18.99,
+      "image": "https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=800",
+      "inStock": true,
+      "attributes": {
+        "type": "Hybrid",
+        "usage": "Outdoor"
+      }
+    },
+    {
+      "id": "p6",
+      "name": "Sunflower Seeds Giant",
+      "category": "seeds",
+      "subCategory": "flower-seeds",
+      "description": "Giant sunflower seeds producing impressive blooms. Great for decoration and oil production.",
+      "price": 9.99,
+      "image": "https://images.unsplash.com/photo-1597848212624-e5d1f1d13b40?w=800",
+      "inStock": true,
+      "attributes": {
+        "type": "Organic",
+        "usage": "Outdoor"
+      }
+    },
+    {
+      "id": "p7",
+      "name": "Marigold Seeds Mixed Colors",
+      "category": "seeds",
+      "subCategory": "flower-seeds",
+      "description": "Vibrant marigold seeds in mixed colors. Natural pest deterrent and beautiful garden addition.",
+      "price": 7.99,
+      "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800",
+      "inStock": true,
+      "attributes": {
+        "type": "Organic",
+        "usage": "Outdoor"
+      }
+    },
+    {
+      "id": "p8",
+      "name": "Organic Compost Fertilizer",
+      "category": "fertilizers",
+      "subCategory": "organic-fertilizers",
+      "description": "100% organic compost made from natural materials. Enriches soil and promotes healthy plant growth.",
+      "price": 34.99,
+      "image": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800",
+      "inStock": true,
+      "attributes": {
+        "type": "Organic",
+        "usage": "All Crops"
+      }
+    },
+    {
+      "id": "p9",
+      "name": "Worm Castings Premium",
+      "category": "fertilizers",
+      "subCategory": "organic-fertilizers",
+      "description": "Premium earthworm castings rich in nutrients. Natural and chemical-free soil enhancement.",
+      "price": 29.99,
+      "image": "https://images.unsplash.com/photo-1617104678098-7a1e8f7c2f91?w=800",
+      "inStock": true,
+      "attributes": {
+        "type": "Organic",
+        "usage": "All Crops"
+      }
+    },
+    {
+      "id": "p10",
+      "name": "NPK Fertilizer 20-20-20",
+      "category": "fertilizers",
+      "subCategory": "chemical-fertilizers",
+      "description": "Balanced NPK fertilizer for rapid plant growth. Water-soluble and fast-acting formula.",
+      "price": 39.99,
+      "image": "https://images.unsplash.com/photo-1617791160588-241658c0f566?w=800",
+      "inStock": true,
+      "attributes": {
+        "type": "Chemical",
+        "usage": "All Crops"
+      }
+    },
+    {
+      "id": "p11",
+      "name": "Nitrogen Boost Fertilizer",
+      "category": "fertilizers",
+      "subCategory": "chemical-fertilizers",
+      "description": "High nitrogen content for leafy green growth. Ideal for vegetables and lawns.",
+      "price": 32.99,
+      "image": "https://images.unsplash.com/photo-1589923188900-85dae523342b?w=800",
+      "inStock": true,
+      "attributes": {
+        "type": "Chemical",
+        "usage": "Vegetables/Lawns"
+      }
+    },
+    {
+      "id": "p12",
+      "name": "Lime Soil Amendment",
+      "category": "fertilizers",
+      "subCategory": "soil-amendments",
+      "description": "Agricultural lime to adjust soil pH. Essential for optimal nutrient availability.",
+      "price": 19.99,
+      "image": "https://images.unsplash.com/photo-1615671524827-c1fe3973b648?w=800",
+      "inStock": true,
+      "attributes": {
+        "type": "Mineral",
+        "usage": "Soil Treatment"
+      }
+    },
+    {
+      "id": "p13",
+      "name": "Garden Spade Professional",
+      "category": "equipment",
+      "subCategory": "hand-tools",
+      "description": "Heavy-duty stainless steel garden spade. Ergonomic handle for comfortable use.",
+      "price": 45.99,
+      "image": "https://images.unsplash.com/photo-1617791160505-6f00504e3519?w=800",
+      "inStock": true,
+      "attributes": {
+        "type": "Hand Tool",
+        "usage": "Digging"
+      }
+    },
+    {
+      "id": "p14",
+      "name": "Pruning Shears Premium",
+      "category": "equipment",
+      "subCategory": "hand-tools",
+      "description": "Sharp bypass pruning shears for clean cuts. Perfect for pruning and harvesting.",
+      "price": 28.99,
+      "image": "https://images.unsplash.com/photo-1617214737515-6f5b3d2b9f1f?w=800",
+      "inStock": true,
+      "attributes": {
+        "type": "Hand Tool",
+        "usage": "Pruning"
+      }
+    },
+    {
+      "id": "p15",
+      "name": "Rotary Tiller 5HP",
+      "category": "equipment",
+      "subCategory": "machinery",
+      "description": "Powerful 5HP rotary tiller for soil preparation. Adjustable tilling width and depth.",
+      "price": 899.99,
+      "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800",
+      "inStock": true,
+      "attributes": {
+        "type": "Machinery",
+        "usage": "Soil Preparation"
+      }
+    },
+    {
+      "id": "p16",
+      "name": "Lawn Mower Electric",
+      "category": "equipment",
+      "subCategory": "machinery",
+      "description": "Cordless electric lawn mower with 40V battery. Quiet and eco-friendly operation.",
+      "price": 349.99,
+      "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800",
+      "inStock": true,
+      "attributes": {
+        "type": "Machinery",
+        "usage": "Lawn Care"
+      }
+    },
+    {
+      "id": "p17",
+      "name": "Drip Irrigation Kit",
+      "category": "equipment",
+      "subCategory": "irrigation",
+      "description": "Complete drip irrigation system for efficient watering. Covers up to 100 plants.",
+      "price": 129.99,
+      "image": "https://images.unsplash.com/photo-1625246297677-ffa5d60157d7?w=800",
+      "inStock": true,
+      "attributes": {
+        "type": "Irrigation",
+        "usage": "Water Management"
+      }
+    },
+    {
+      "id": "p18",
+      "name": "Sprinkler System Automatic",
+      "category": "equipment",
+      "subCategory": "irrigation",
+      "description": "Programmable sprinkler system with timer. Perfect for lawns and large gardens.",
+      "price": 189.99,
+      "image": "https://images.unsplash.com/photo-1621451537084-482c73073a0f?w=800",
+      "inStock": true,
+      "attributes": {
+        "type": "Irrigation",
+        "usage": "Lawn/Garden"
+      }
+    },
+    {
+      "id": "p19",
+      "name": "Organic Neem Insecticide",
+      "category": "pesticides",
+      "subCategory": "insecticides",
+      "description": "Natural neem-based insecticide. Safe for beneficial insects and organic farming.",
+      "price": 24.99,
+      "image": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800",
+      "inStock": true,
+      "attributes": {
+        "type": "Organic",
+        "usage": "Pest Control"
+      }
+    },
+    {
+      "id": "p20",
+      "name": "Broad Spectrum Insecticide",
+      "category": "pesticides",
+      "subCategory": "insecticides",
+      "description": "Effective broad spectrum insecticide. Controls most common garden pests.",
+      "price": 32.99,
+      "image": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800",
+      "inStock": true,
+      "attributes": {
+        "type": "Chemical",
+        "usage": "Pest Control"
+      }
+    },
+    {
+      "id": "p21",
+      "name": "Organic Vinegar Herbicide",
+      "category": "pesticides",
+      "subCategory": "herbicides",
+      "description": "Natural vinegar-based weed killer. Safe for pets and children after drying.",
+      "price": 21.99,
+      "image": "https://images.unsplash.com/photo-1588880853564-0c1f5f2f5fa7?w=800",
+      "inStock": true,
+      "attributes": {
+        "type": "Organic",
+        "usage": "Weed Control"
+      }
+    },
+    {
+      "id": "p22",
+      "name": "Pre-Emergent Herbicide",
+      "category": "pesticides",
+      "subCategory": "herbicides",
+      "description": "Prevents weed seeds from germinating. Long-lasting protection for lawns and gardens.",
+      "price": 38.99,
+      "image": "https://images.unsplash.com/photo-1610056494249-5d7e4d15f97f?w=800",
+      "inStock": true,
+      "attributes": {
+        "type": "Chemical",
+        "usage": "Weed Prevention"
+      }
+    },
+    {
+      "id": "p23",
+      "name": "Copper Fungicide Organic",
+      "category": "pesticides",
+      "subCategory": "fungicides",
+      "description": "Copper-based fungicide for organic gardening. Prevents and controls fungal diseases.",
+      "price": 27.99,
+      "image": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=800",
+      "inStock": true,
+      "attributes": {
+        "type": "Organic",
+        "usage": "Disease Control"
+      }
+    },
+    {
+      "id": "p24",
+      "name": "Systemic Fungicide Advanced",
+      "category": "pesticides",
+      "subCategory": "fungicides",
+      "description": "Systemic fungicide with long-lasting protection. Treats and prevents fungal infections.",
+      "price": 44.99,
+      "image": "https://images.unsplash.com/photo-1584949091550-c8fbfe1e9f95?w=800",
+      "inStock": true,
+      "attributes": {
+        "type": "Chemical",
+        "usage": "Disease Treatment"
+      }
+    },
+    {
+      "id": "6090a252-7fed-4caa-acce-67c24faead80",
+      "name": "battata",
+      "category": "equipment",
+      "subCategory": "hand-tools",
+      "description": "batata ghoula",
+      "image": "https://www.simplotfood.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2F0dkgxhks0leg%2FRKiZ605RAV8kjDQnxFCWP%2Fb03b8729817c90b29b88d536bfd37ac5%2F9-Unusual-Uses-For-Potatoes.jpg%3Ffm%3Dwebp&w=750&q=75",
+      "price": 44,
+      "inStock": true,
+      "attributes": {},
+      "createdAt": "2025-12-20T00:58:18.001Z",
+      "updatedAt": "2025-12-20T00:58:18.001Z"
+    },
+    {
+      "id": "f4026607-24cf-40aa-a151-7bccf5187746",
+      "name": "Moemen",
+      "category": "seeds",
+      "subCategory": "vegetable-seeds",
+      "description": "ahahaha",
+      "image": "https://www.simplotfood.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2F0dkgxhks0leg%2FRKiZ605RAV8kjDQnxFCWP%2Fb03b8729817c90b29b88d536bfd37ac5%2F9-Unusual-Uses-For-Potatoes.jpg%3Ffm%3Dwebp&w=750&q=75",
+      "price": 55,
+      "inStock": true,
+      "attributes": {},
+      "createdAt": "2025-12-20T01:21:07.551Z",
+      "updatedAt": "2025-12-20T01:21:07.551Z"
+    }
+  ]
+}
+

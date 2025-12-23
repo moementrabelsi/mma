@@ -1,0 +1,33 @@
+{
+  "name": "agriculture-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Agriculture Company Website",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "migrate": "node src/scripts/migrate.js",
+    "check-db": "node src/scripts/checkDatabase.js",
+    "clear-products": "node src/scripts/clearProducts.js",
+    "clear-all": "node src/scripts/clearAllData.js"
+  },
+  "keywords": [
+    "agriculture",
+    "express",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.16.3",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
